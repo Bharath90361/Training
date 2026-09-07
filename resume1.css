@@ -29,3 +29,25 @@ height:50px;
 color:red;
 text-decoration-line: underline;
 }
+
+#userInteraction{
+display:grid;
+grid-template-columns: repeat(3, auto);
+gap:10px;
+}
+#max_value{
+background-color:#CDEB8B;
+}
+#reverse{
+background-color:#C3D9FF;
+}
+#large{
+background-color:#EEEEEE;
+}
+#cookie{
+background-color:#FFFF88;
+}
+#task{
+background-color:black;
+color:white;
+}

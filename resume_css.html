@@ -30,7 +30,7 @@
       <div id="mypage-center">
             <div id="objective">
             <b class="topics">Objective</b>
-            <p class="content"> Motivated and enthusiastic software developer seeking an entry-level Java Full Stack Developer position where I can apply my knowledge of Java, Spring Boot, Hibernate, SQL, and web technologies to develop reliable applications while continuously improving my technical and problem-solving skills.</p>
+          <p class="content"> Motivated and enthusiastic software developer seeking an entry-level Java Full Stack Developer      position where I can apply my knowledge of Java, Spring Boot, Hibernate, SQL, and web technologies to develop reliable applications while continuously improving my technical and problem-solving skills.</p>
             </div>
             
             <div id="education">
@@ -108,5 +108,64 @@
         <a href="">Leetcode</a>
     </div>
     </Footer>
+      <div id="task">
+    <center><h1>javascript tasks</h1></center>
+    </div>
+    <div id="userInteraction">     
+    <div id="max_value">
+    <form>
+    <fieldset>
+    <legend>Max Value</legend>
+    <label for="fValue">First value:</label><br>
+    <input type="Number" id="fValue" name="fnumb" ><br>
+    <label for="sValue">second value:</label><br>
+    <input type="Number" id="sValue" name="snumb"><br><br>
+    <h3>result:<span id="ans"></span></h3>
+    <button type="button" onclick="MaxValue()">calculate</button>
+  </fieldset>
+    </form>
+    </div>
+    
+    <div id="reverse">
+    <form>
+    <fieldset>
+    <legend>reverse String</legend>
+    <label for="str">enter string:</label><br>
+    <input type="text" id="str" name="str" value=""><br>
+    <h3>result:<span id="ans2"></span></h3>
+    <button type="button" onclick="reverseString()">reverse</button>
+  </fieldset>
+    </form>
+    </div>
+    
+    <div id="large">
+    <form>
+    <fieldset>
+    <legend>largest String</legend>
+    <label for="strs">enter strings:</label><br>
+    <input type="text" id="strs" name="strs" placeholder="enter strings seperated by comma"><br>
+    <h3>result:<span id="ans3"></span></h3>
+    <button type="button" onclick="largeString()">large string</button>
+  </fieldset>
+    </form>
+    </div>
+    
+    <div id="cookie">
+    <form>
+    <fieldset>
+    <legend>cookie</legend>
+    <label for="user">enter name:</label><br>
+    <input type="text" id="user" name="user" placeholder="enter name"><br>
+    <label for="ph">enter phone number:</label><br>
+    <input type="text" id="ph" name="ph" placeholder="enter phone Number"><br><br>
+    <button type="button" onclick="store()">store</button>
+  </fieldset>
+    </form>
+    </div>
+    
+    
+    </div>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
