@@ -4,21 +4,24 @@
 
 <head>
     <title>Resume</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
 <header>
-    <center>
-        <h2>Bharath Kumar M</h2>
-    </center>
+    <div id="mypage-header">
+        <center>
+            <h2>Bharath Kumar M</h2>
+        </center>
+    </div>
 </header>
 
 <hr>
 
 <main>
 
-<table >
+<table border="1" id="tbl">
 <tr>
 <th rowspan="1">Objective
 </th>
@@ -113,7 +116,7 @@
 
 <hr>
 
-<footer>
+<footer id="mypage-footer">
     <center>
         <a href="mailto:bharathkumar90361@gmail.com">
             bharathkumar90361@gmail.com
@@ -124,6 +127,63 @@
         <a href="">Leetcode</a>
     </center>
 </footer>
+<div id="task">
+    <center><h1>javascript tasks</h1></center>
+    </div>
+    <div id="userInteraction">     
+    <div id="max_value">
+    <form>
+    <fieldset>
+    <legend>Max Value</legend>
+    <label for="fValue">First value:</label><br>
+    <input type="Number" id="fValue" name="fnumb" placeholder="enter first num"><br>
+    <label for="sValue">second value:</label><br>
+    <input type="Number" id="sValue" name="snumb" placeholder="enter second num"><br><br>
+    <button type="button" onclick="MaxValue()">calculate</button>
+    <h3>result:<span id="ans"></span></h3>
+  </fieldset>
+    </form>
+    </div>
+    <div id="reverse">
+    <form>
+    <fieldset>
+    <legend>reverse String</legend>
+    <label for="str">enter string:</label><br>
+    <input type="text" id="str" name="str" value="" placeholder="enter string"><br><br>
+    <button type="button" onclick="reverseString()">reverse</button>
+    <h3>result:<span id="ans2"></span></h3>
+  </fieldset>
+    </form>
+    </div>
+    
+    <div id="large">
+    <form>
+    <fieldset>
+    <legend>largest String</legend>
+    <label for="strs">enter strings:</label><br>
+    <input type="text" id="strs" name="strs" placeholder="enter strings seperated by comma"><br><br>
+    <button type="button" onclick="largeString()">large string</button>
+     <h3>result:<span id="ans3"></span></h3>
+  </fieldset>
+    </form>
+    </div>
+    <div id="cookie">
+    <form>
+    <fieldset>
+    <legend>cookie</legend>
+    <label for="user">enter name:</label><br>
+    <input type="text" id="user" name="user" placeholder="enter name"><br>
+    <label for="ph">enter phone number:</label><br>
+    <input type="text" id="ph" name="ph" placeholder="enter phone Number"><br><br>
+    <button type="button" onclick="store()">store</button>
+  </fieldset>
+    </form>
+    </div>
+    
+    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 
