@@ -68,15 +68,17 @@ window.onload = function () {
 
 //jquery
 $("#tbl").css("color","#CC0000");
-$("#tbl").css("border-color","#FF1A00");
+$("#tbl, #tbl th, #tbl td").css("border-color", "#FF1A00");
 $("input").css({
         "background-color": "#FFFF88",
         "border": "none"
     });
 $("#mypage-footer").hide();
-$("#mypage-footer").before("<div id='references'></div>");
-$("#references").append("<p>reference 1:Jquery documentation</p>");
-$("#references").append("<p>reference 2:java script documentation</p>");
+$("#foot").before("<div id='ref'></div>");
+ $("#ref").append("<h1>references</h1>");
+ $("#ref").append("<div id='references'></div>");
+ $("#references").append("<p>reference 1:Jquery documentation</p>");
+ $("#references").append("<p>reference 2:java script documentation</p>");
 $("#mypage-header").css({
     "height":"10px",
     "overflow": "hidden",
@@ -96,5 +98,86 @@ $("#mypage-header").hover(function() {
 
 });
 $("#mypage-footer").slideDown(10000,function(){
-    alert("10s complted footer is visible");
+    $("#myDialog").dialog("open");
+});
+$("#references").css({"background-color":"#CEAB93",
+    "height":"60px",
+    "margin-bottom":"10px"
+});
+
+    $("#mypage-center").accordion({
+        collapsible: true,
+        active: false
+    });
+$("#head").accordion({
+        collapsible: true,
+        active: false
+    });
+    $("#foot").accordion({
+        collapsible: true,
+        active: false
+    });
+ $("#interaction").accordion({
+        collapsible: true,
+        active: false
+    });
+     $("#ref").accordion({
+        collapsible: true,
+        active: false
+    });
+$("#ref").css({
+    "background-color": "#AD8B73",
+    "padding":"20px"
+})
+$("#foot").before("<hr>");
+// $("button").button({
+//     icon: "ui-icon-disk"
+// });
+$("#date").datepicker({
+    dateFormat: "dd/mm/yy"
+});
+$("body").append(`
+    <div id="myDialog" title="Result">
+        <p>10 seconds completed footer is visible</p>
+    </div>
+`);
+$("#myDialog").dialog({
+    autoOpen: false,
+    modal: true,
+   buttons: {
+        "OK": function() {
+            $(this).dialog("close");
+        },
+        "Cancel": function() {
+            $(this).dialog("close");
+        }
+    }
+});
+$("#mypage-content").tabs({
+    active: 1
+});
+let allSkills=[];
+$("#skills p").each(function(){
+    let text = $(this).text();
+
+    let values = text.split(":")[1].split(",");
+
+    values.forEach(function(value) {
+        allSkills.push(value.trim());
+    });
+});
+$("#strs").autocomplete({
+    source: allSkills
+});
+$("#search").button({
+    icon:"ui-icon-search"
+});
+$("#save").button({
+    icon:"ui-icon-disk"
+});
+$("#rev").button({
+    icon: "ui-icon-arrowreturnthick-1-w"
+});
+$("#cal").button({
+    icon: "ui-icon-calculator"
 });
