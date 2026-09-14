@@ -1,53 +1,64 @@
-#mypage-main{
-display:flex;
-background-color:#EEEEEE;
-}
-#mypage-leftnav{
-margin:10px;
-}
-#mypage-center{
-border:1px black solid;
-border-radius:10px;
-padding:10px;
-}
-.content{
-font-style: italic;
-}
-#mypage-header{
-text-align: center;
-background-color:#FFFF88;
-height:50px;
-border-radius:10px;
-}
-#mypage-footer{
-text-align: center;
-background-color:#FFFF88;
-border-radius:10px;
-height:50px;
-}
-.topics{
-color:red;
-text-decoration-line: underline;
+#mypage_main {
+    display: flex;
+    background-color: #eeeeee;
 }
 
-#userInteraction{
-display:grid;
-grid-template-columns: repeat(3, auto);
-gap:10px;
+#mypage_leftnav {
+    margin: 10px;
 }
-#max_value{
-background-color:#CDEB8B;
+
+#mypage_center {
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 10px;
 }
-#reverse{
-background-color:#C3D9FF;
+
+.content {
+    font-style: italic;
 }
-#large{
-background-color:#EEEEEE;
+
+#mypage_header {
+    text-align: center;
+    background-color: #ffff88;
+    height: 50px;
+    border-radius: 10px;
 }
-#cookie{
-background-color:#FFFF88;
+
+#mypage_footer {
+    text-align: center;
+    background-color: #ffff88;
+    border-radius: 10px;
+    height: 50px;
 }
-#task{
-background-color:black;
-color:white;
+
+.topics {
+    color: red;
+    text-decoration-line: underline;
+}
+
+#user_interaction {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+}
+
+#max_value {
+    background-color: #cdeb8b;
+}
+
+#reverse {
+    background-color: #c3d9ff;
+}
+
+#large {
+    background-color: #eeeeee;
+}
+
+#cookie {
+    background-color: #ffff88;
+}
+
+#task {
+    background-color: black;
+    color: white;
 }
