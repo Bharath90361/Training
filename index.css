@@ -1,21 +1,26 @@
-#userInteraction{
-display:grid;
-grid-template-columns: repeat(3, auto);
-gap:10px;
+#user_interaction {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
 }
-#max_value{
-background-color:#CDEB8B;
+
+#max_value {
+    background-color: #cdeb8b;
 }
-#reverse{
-background-color:#C3D9FF;
+
+#reverse {
+    background-color: #c3d9ff;
 }
-#large{
-background-color:#EEEEEE;
+
+#large {
+    background-color: #eeeeee;
 }
-#cookie{
-background-color:white;
+
+#cookie {
+    background-color: white;
 }
-#task{
-background-color:black;
-color:white;
+
+#task {
+    background-color: black;
+    color: white;
 }
