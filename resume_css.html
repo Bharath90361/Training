@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Resume with css</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="resume1.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div id="mypage_header" class="d-flex justify-content-between align-items-center">
+            <h2>Bharath Kumar M</h2>
+
+            <button class="btn btn-primary">
+                Messages
+                <span class="badge text-bg-danger">5</span>
+            </button>
+        </div>
+    </header>
+    <hr />
+    <!-- center content -->
+    <main>
+        <div id="mypage_main" class="container">
+            <div class="row">
+                <!-- navbar -->
+                <div id="mypage_leftnav" class="col-12 col-md-6 col-lg-4">
+                    <div class="d-flex flex-row flex-lg-column overflow-auto">
+                        <button class="active btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="end"
+                            title="View my objective">
+                            Objective
+                        </button>
+                        <br />
+                        <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="end"
+                            title="View my education">
+                            Education
+                        </button>
+                        <br />
+                        <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="end"
+                            title="View my technical skills">
+                            Skills
+                        </button>
+                        <br />
+                        <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="end"
+                            title="View my experience">
+                            Experience
+                        </button>
+                        <br />
+                        <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="end"
+                            title="View my projects">
+                            Projects
+                        </button>
+                    </div>
+                </div>
+                <!-- tabs -->
+                <div class="col-lg-8">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#objective">
+                                objective
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#education">
+                                Education
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#skills">
+                                Skills
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#experience">
+                                experience
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#projects">
+                                projects
+                            </button>
+                        </li>
+                    </ul>
+                    <!-- objective -->
+                    <div id="mypage_center" class="tab-content">
+                        <div id="objective" class="tab-pane fade show active">
+                            <b class="topics">Objective</b>
+                            <p class="content">
+                                Motivated and enthusiastic software
+                                developer seeking an entry-level Java Full
+                                Stack Developer position where I can apply
+                                my knowledge of Java, Spring Boot,
+                                Hibernate, SQL, and web technologies to
+                                develop reliable applications while
+                                continuously improving my technical and
+                                problem-solving skills.
+                            </p>
+                        </div>
+                        <!-- education -->
+                        <div id="education" class="tab-pane fade">
+                            <b class="topics">Education</b>
+                            <div>
+                                <span>The Oxford College Of
+                                    Engineering|2022-2026</span>
+                                <p>
+                                    BE|Information Science And Engineering
+                                </p>
+                            </div>
+                            <div>
+                                <span>Golden City PU College|2019-2021</span>
+                                <p>PCMB</p>
+                            </div>
+                        </div>
+                        <!-- skills -->
+                        <div id="skills" class="tab-pane fade">
+                            <b class="topics"> Skills</b>
+                            <p><b>Programming Language:</b>Java,sql</p>
+                            <p><b>Frontend:</b>Html,css,javascript</p>
+                            <p><b>Backend:</b>Spring,Hibernate,j2ee</p>
+                            <p><b>DataBase:</b>Mysql</p>
+                        </div>
+                        <!-- experience -->
+                        <div id="experience" class="tab-pane fade">
+                            <b class="topics">Experience</b>
+                            <div>
+                                <b>Dhee Coading labs</b>
+                                <ul>
+                                    <li class="content">
+                                        Upskilled myself in Java full stack
+                                    </li>
+                                    <li class="content">
+                                        Developed projects using Spring
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- projects -->
+                        <div id="projects" class="tab-pane fade">
+                            <b class="topics">Projects</b>
+                            <div>
+                                <b>Asset Management system|<a
+                                        href="https://github.com/Bharath9036/Asset-Management-System">Github</a></b>
+                                <ul>
+                                    <li class="content">
+                                        Developed a Java-based asset
+                                        management application to manage and
+                                        track company assets efficiently.
+                                    </li>
+                                    <li class="content">
+                                        Implemented backend functionality
+                                        using Spring Boot, Hibernate, and
+                                        MySQL for data management and CRUD
+                                        operations.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>carrer track|<a href="https://github.com/Bharath9036/CareerTrack">Github</a></b>
+                                <ul>
+                                    <li class="content">
+                                        Developed a career management
+                                        application to help users manage
+                                        career-related information and
+                                        opportunities.
+                                    </li>
+                                    <li class="content">
+                                        Implemented REST APIs using Spring
+                                        Boot and integrated MySQL for
+                                        storing and managing user and career
+                                        data.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>Wonder Nest|<a href="https://github.com/Bharath9036/wondernest">Github</a></b>
+                                <ul>
+                                    <li class="content">
+                                        Developed a web application for
+                                        managing and exploring accommodation
+                                        and property-related information.
+                                    </li>
+                                    <li class="content">
+                                        Implemented backend services using
+                                        Java and Spring Boot with database
+                                        integration for efficient data
+                                        management.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hr />
+    <!-- footer -->
+    <footer>
+        <div id="mypage_footer">
+            <a href="mailto:bharathkumar90361@gmail.com">
+                bharathkumar90361@gmail.com
+            </a>
+            | 9036127399|
+            <a
+                href="linkedin.com/in/bharath-kumar-abb674230?utm_source=share_via&utm_content=profile&utm_medium=member_android">Linkdin</a>|
+            <a href="https://github.com/Bharath9036">Github</a>|
+            <a href="https://leetcode.com/u/Bharath90361/">Leetcode</a>
+        </div>
+    </footer>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">
+        Show live toast
+    </button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+    <!-- javascript tasks -->
+    <div class="container">
+        <div id="task">
+            <center>
+                <h1>javascript tasks</h1>
+            </center>
+        </div>
+        <div id="user_interaction">
+            <div id="max_value">
+                <form>
+                    <fieldset>
+                        <legend>Max Value</legend>
+                        <label for="first_value" class="form-label">First value:</label>
+                        <br />
+                        <input type="number" id="first_value" name="fnumb" class="form-control" /><br />
+                        <label for="second_value" class="form-label">Second value:</label><br />
+                        <input type="number" id="second_value" name="snumb" class="form-control" /><br /><br />
+                        <button type="button" id="max_btn" class="btn btn-primary">
+                            <i class="bi bi-calculator"></i> calculate
+                        </button>
+                        <p id="max_validation"></p>
+                        <h3>result:<span id="maximum_result"></span></h3>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="reverse">
+                <form>
+                    <fieldset>
+                        <legend>reverse String</legend>
+                        <label for="input_string" class="form-label">Enter string:</label><br />
+                        <input type="text" id="input_string" name="input_string" value="" class="form-control" /><br />
+                        <button type="button" id="reverse_btn" class="btn btn-primary">
+                            <i class="bi bi-arrow-repeat"></i> reverse
+                        </button>
+                        <p id="reverse_validation"></p>
+                        <h3>result:<span id="reverse_result"></span></h3>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="large">
+                <form>
+                    <fieldset>
+                        <legend>largest String</legend>
+                        <label for="input_strings" class="form-label">Enter strings:</label><br />
+                        <input type="text" id="input_strings" name="input_strings"
+                            placeholder="enter strings separated by comma" class="form-control" /><br />
+                        <button type="button" id="large_btn" class="btn btn-primary">
+                            <i class="bi bi-textarea-t"></i> large string
+                        </button>
+                        <p id="largest_string_validation"></p>
+                        <h3>result:<span id="largest_string_result"></span></h3>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="cookie">
+                <form>
+                    <fieldset>
+                        <legend>cookie</legend>
+                        <label for="user_name" class="form-label">Enter name:</label><br />
+                        <input type="text" id="user_name" name="user_name" placeholder="enter name"
+                            class="form-control" /><br />
+                        <label for="phone_number" class="form-label">Enter phone number:</label><br />
+                        <input type="text" id="phone_number" name="phone_number" placeholder="enter phone number"
+                            class="form-control" /><br /><br />
+                        <button type="button" id="save_btn" class="btn btn-primary">
+                            <i class="bi bi-save"></i> store
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- dialod box -->
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">10 seconds completed</div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        OK
+                    </button>
+
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="okButton">
+                        CANCEL
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
