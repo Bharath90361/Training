@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Back button */
+
+#back_button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#back_button:hover {
+    background-color: #555;
+}
+
+/* Heading */
+
+h3 {
+    text-align: center;
+    margin: 40px 0 25px;
+    font-size: 28px;
+    color: #222;
+}
+
+/* Form */
+
+#update_profile {
+    width: 450px;
+    margin: auto;
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels/text before inputs */
+
+#update_profile input {
+    display: block;
+    width: 100%;
+
+    margin: 8px 0 20px;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+#update_profile input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Update button */
+
+#update_profile button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#update_profile button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    #update_profile {
+        width: 100%;
+    }
+}

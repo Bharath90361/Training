@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Back button */
+
+#back_button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#back_button:hover {
+    background-color: #555;
+}
+
+/* Heading */
+
+h2 {
+    text-align: center;
+    margin: 40px 0 25px;
+    color: #222;
+}
+
+/* Friends container */
+
+#friends {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* 
+   This styles elements that your friends.js
+   dynamically adds inside #friends
+*/
+
+#friends > div {
+    background-color: white;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+#friends > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
