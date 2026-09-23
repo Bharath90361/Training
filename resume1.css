@@ -5,6 +5,11 @@
 
 #mypage_leftnav {
     margin: 10px;
+
+}
+
+#mypage_leftnav a {
+    text-decoration: none;
 }
 
 #mypage_center {
@@ -18,14 +23,18 @@
 }
 
 #mypage_header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffff88;
     height: 50px;
     border-radius: 10px;
 }
 
 #mypage_footer {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffff88;
     border-radius: 10px;
     height: 50px;

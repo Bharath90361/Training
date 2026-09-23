@@ -2,13 +2,16 @@
  * Finds the maximum of two numbers.
  */
 function MaxValue() {
+    document.getElementById("maximum_validation").innerText = "";
+    document.getElementById("maximum_value_result").innerText = "";
     let firstNumber = document.getElementById("first_number").value;
     let secondNumber = document.getElementById("second_number").value;
 
     // Validate both values.
     if (firstNumber === "" || secondNumber === "") {
-        document.getElementById("maximum_value_result").innerText =
+        document.getElementById("maximum_validation").innerText =
             "Enter both values";
+        document.getElementById("maximum_validation").style.color = "red";
         return;
     }
 
@@ -17,8 +20,9 @@ function MaxValue() {
 
     // Validate that both values are numbers.
     if (isNaN(firstNumber) || isNaN(secondNumber)) {
-        document.getElementById("maximum_value_result").innerText =
-            "Enter valid numbers";
+        document.getElementById("maximum_validation").innerText =
+            "Enter valid values";
+        document.getElementById("maximum_validation").style.color = "red";
         return;
     }
     //comparing values
@@ -28,7 +32,7 @@ function MaxValue() {
         document.getElementById("maximum_value_result").innerText =
             secondNumber;
     }
-
+    document.getElementById("maximum_value_result").style.color = "blue";
     document.getElementById("first_number").value = "";
     document.getElementById("second_number").value = "";
 }
@@ -38,11 +42,13 @@ function MaxValue() {
  */
 function reverseString() {
     let inputString = document.getElementById("input_string").value;
-
+    document.getElementById("reverse_validation").innerText = "";
+    document.getElementById("reversed_string_result").innerText = "";
     // Validate the string.
     if (inputString === "") {
-        document.getElementById("reversed_string_result").innerText =
+        document.getElementById("reverse_validation").innerText =
             "Enter proper string";
+        document.getElementById("reverse_validation").style.color = "red";
         return;
     }
 
@@ -63,6 +69,7 @@ function reverseString() {
 
     document.getElementById("reversed_string_result").innerText =
         reversedString;
+    document.getElementById("reversed_string_result").style.color = "blue";
     document.getElementById("input_string").value = "";
 }
 
@@ -71,11 +78,13 @@ function reverseString() {
  */
 function largeString() {
     let inputString = document.getElementById("input_strings").value;
-
+    document.getElementById("large_validation").innerText = "";
+    document.getElementById("largest_string_result").innerText = "";
     // Validate the input string.
     if (inputString === "") {
-        document.getElementById("largest_string_result").innerText =
+        document.getElementById("large_validation").innerText =
             "Enter proper string";
+        document.getElementById("large_validation").style.color = "red";
         return;
     }
 
@@ -93,12 +102,14 @@ function largeString() {
 
     // Validate that at least one string is provided.
     if (largestString === "") {
-        document.getElementById("largest_string_result").innerText =
+        document.getElementById("large_validation").innerText =
             "Enter proper string";
+        document.getElementById("large_validation").style.color = "red";
         return null;
     }
 
     document.getElementById("largest_string_result").innerText = largestString;
+    document.getElementById("largest_string_result").style.color = "blue";
     document.getElementById("input_strings").value = "";
 }
 
@@ -108,16 +119,21 @@ function largeString() {
 function store() {
     let userName = document.getElementById("user_name").value;
     let phoneNumber = document.getElementById("phone_number").value;
+    document.getElementById("cookie_validation").innerText = "";
 
     // Validate name and phone number.
     if (userName === "" || phoneNumber === "") {
-        alert("Enter name and phone number");
+        document.getElementById("cookie_validation").innerText =
+            "enter name and phone number";
+        document.getElementById("cookie_validation").style.color = "red";
         return;
     }
 
     // Validate the name length.
     if (userName.length < 2 || userName.length > 50) {
-        alert("Enter proper name");
+        document.getElementById("cookie_validation").innerText =
+            "enter proper name";
+        document.getElementById("cookie_validation").style.color = "red";
         return;
     }
 
@@ -125,7 +141,9 @@ function store() {
     const mobileNumberPattern = /^[1-9]\d{9}$/;
 
     if (!mobileNumberPattern.test(phoneNumber)) {
-        alert("Enter the proper phone number");
+        document.getElementById("cookie_validation").innerText =
+            "enter proper number";
+        document.getElementById("cookie_validation").style.color = "red";
         return;
     }
 
@@ -134,7 +152,7 @@ function store() {
 
     document.cookie = "username=" + userName + "; max-age=3600; path=/";
     document.cookie = "phone=" + phoneNumber + "; max-age=3600; path=/";
-
+    alert("cookie saved");
     console.log("Cookie is " + document.cookie);
 }
 
