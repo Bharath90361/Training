@@ -24,3 +24,17 @@
     background-color: black;
     color: white;
 }
+
+#mypage_footer {
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+#mypage_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

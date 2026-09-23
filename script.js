@@ -3,14 +3,17 @@ $(document).ready(function () {
      * Finds the maximum of two numbers.
      */
     function MaxValue() {
-        let firstNumber = document.getElementById("first_value").value;
-        let secondNumber = document.getElementById("second_value").value;
+        document.getElementById("maximum_validation").innerText = "";
+        document.getElementById("maximum_value_result").innerText = "";
+        let firstNumber = document.getElementById("first_number").value;
+        let secondNumber = document.getElementById("second_number").value;
 
         // Validate both values.
         if (firstNumber === "" || secondNumber === "") {
-            document.getElementById("maximum_result").innerHTML =
+            document.getElementById("maximum_validation").innerText =
                 "Enter both values";
-            return null;
+            document.getElementById("maximum_validation").style.color = "red";
+            return;
         }
 
         firstNumber = Number(firstNumber);
@@ -18,47 +21,57 @@ $(document).ready(function () {
 
         // Validate that both values are numbers.
         if (isNaN(firstNumber) || isNaN(secondNumber)) {
-            document.getElementById("maximum_result").innerHTML =
-                "Enter valid numbers";
-            return null;
+            document.getElementById("maximum_validation").innerText =
+                "Enter valid values";
+            document.getElementById("maximum_validation").style.color = "red";
+            return;
         }
-
+        //comparing values
         if (firstNumber > secondNumber) {
-            document.getElementById("maximum_result").innerHTML = firstNumber;
+            document.getElementById("maximum_value_result").innerText =
+                firstNumber;
         } else {
-            document.getElementById("maximum_result").innerHTML = secondNumber;
+            document.getElementById("maximum_value_result").innerText =
+                secondNumber;
         }
-
-        document.getElementById("first_value").value = "";
-        document.getElementById("second_value").value = "";
+        document.getElementById("maximum_value_result").style.color = "blue";
+        document.getElementById("first_number").value = "";
+        document.getElementById("second_number").value = "";
     }
 
     /**
-     * Reverses a string.
+     * Reverses the given string.
      */
     function reverseString() {
         let inputString = document.getElementById("input_string").value;
-        inputString = inputString.trim();
+        document.getElementById("reverse_validation").innerText = "";
+        document.getElementById("reversed_string_result").innerText = "";
         // Validate the string.
         if (inputString === "") {
-            document.getElementById("reverse_result").innerText =
+            document.getElementById("reverse_validation").innerText =
                 "Enter proper string";
-            return null;
+            document.getElementById("reverse_validation").style.color = "red";
+            return;
         }
+
         let stringArray = inputString.split("");
         let startIndex = 0;
         let endIndex = stringArray.length - 1;
-
+        //reversing the string
         while (startIndex < endIndex) {
             let temporaryValue = stringArray[startIndex];
             stringArray[startIndex] = stringArray[endIndex];
             stringArray[endIndex] = temporaryValue;
+
             startIndex++;
             endIndex--;
         }
 
         let reversedString = stringArray.join("");
-        document.getElementById("reverse_result").innerText = reversedString;
+
+        document.getElementById("reversed_string_result").innerText =
+            reversedString;
+        document.getElementById("reversed_string_result").style.color = "blue";
         document.getElementById("input_string").value = "";
     }
 
@@ -66,20 +79,24 @@ $(document).ready(function () {
      * Finds the largest string from the given strings.
      */
     function largeString() {
-        let inputStrings = document.getElementById("input_strings").value;
-
+        let inputString = document.getElementById("input_strings").value;
+        document.getElementById("large_validation").innerText = "";
+        document.getElementById("largest_string_result").innerText = "";
         // Validate the input string.
-        if (inputStrings === "") {
-            document.getElementById("largest_string_result").innerText =
+        if (inputString === "") {
+            document.getElementById("large_validation").innerText =
                 "Enter proper string";
-            return null;
+            document.getElementById("large_validation").style.color = "red";
+            return;
         }
 
-        let stringArray = inputStrings.split(",");
-        let largestString = "";
+        let stringArray = inputString.split(",");
 
+        let largestString = "";
+        //checking largest string
         for (let index = 0; index < stringArray.length; index++) {
             let currentString = stringArray[index].trim();
+
             if (currentString.length > largestString.length) {
                 largestString = currentString;
             }
@@ -87,13 +104,15 @@ $(document).ready(function () {
 
         // Validate that at least one string is provided.
         if (largestString === "") {
-            document.getElementById("largest_string_result").innerText =
+            document.getElementById("large_validation").innerText =
                 "Enter proper string";
+            document.getElementById("large_validation").style.color = "red";
             return null;
         }
 
         document.getElementById("largest_string_result").innerText =
             largestString;
+        document.getElementById("largest_string_result").style.color = "blue";
         document.getElementById("input_strings").value = "";
     }
 
@@ -103,31 +122,40 @@ $(document).ready(function () {
     function store() {
         let userName = document.getElementById("user_name").value;
         let phoneNumber = document.getElementById("phone_number").value;
+        document.getElementById("cookie_validation").innerText = "";
 
         // Validate name and phone number.
         if (userName === "" || phoneNumber === "") {
-            alert("Enter name and phone number");
+            document.getElementById("cookie_validation").innerText =
+                "enter name and phone number";
+            document.getElementById("cookie_validation").style.color = "red";
             return;
         }
 
         // Validate the name length.
         if (userName.length < 2 || userName.length > 50) {
-            alert("Enter proper name");
+            document.getElementById("cookie_validation").innerText =
+                "enter proper name";
+            document.getElementById("cookie_validation").style.color = "red";
             return;
         }
 
         // Validate the phone number.
-        const phoneNumberPattern = /^[1-9]\d{9}$/;
+        const mobileNumberPattern = /^[1-9]\d{9}$/;
 
-        if (!phoneNumberPattern.test(phoneNumber)) {
-            alert("Enter the proper phone number");
+        if (!mobileNumberPattern.test(phoneNumber)) {
+            document.getElementById("cookie_validation").innerText =
+                "enter proper number";
+            document.getElementById("cookie_validation").style.color = "red";
             return;
         }
 
         document.cookie = "username=; max-age=0; path=/";
         document.cookie = "phone=; max-age=0; path=/";
+
         document.cookie = "username=" + userName + "; max-age=3600; path=/";
         document.cookie = "phone=" + phoneNumber + "; max-age=3600; path=/";
+        alert("cookie saved");
         console.log("Cookie is " + document.cookie);
     }
 
