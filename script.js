@@ -3,7 +3,7 @@ $(document).ready(function () {
     function MaxValue() {
         let firstNumber = document.getElementById("first_value").value;
         let secondNumber = document.getElementById("second_value").value;
-
+        document.getElementById("maximum_result").innerHTML = "";
         // Validate both values.
         if (firstNumber === "" || secondNumber === "") {
             document.getElementById("max_validation").innerHTML =
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         // Validate that both values are numbers.
         if (isNaN(firstNumber) || isNaN(secondNumber)) {
-            document.getElementById("maximum_result").innerHTML =
+            document.getElementById("max_validation").innerHTML =
                 "Enter valid numbers";
             return null;
         }
@@ -27,7 +27,7 @@ $(document).ready(function () {
         } else {
             document.getElementById("maximum_result").innerHTML = secondNumber;
         }
-
+        document.getElementById("maximum_result").style.color="blue";
         document.getElementById("first_value").value = "";
         document.getElementById("second_value").value = "";
     }
@@ -38,6 +38,7 @@ $(document).ready(function () {
     function reverseString() {
         let inputString = document.getElementById("input_string").value;
         inputString = inputString.trim();
+        document.getElementById("reverse_result").innerText = "";
         // Validate the string.
         if (inputString === "") {
             document.getElementById("reverse_validation").innerText =
@@ -60,6 +61,7 @@ $(document).ready(function () {
 
         let reversedString = stringArray.join("");
         document.getElementById("reverse_result").innerText = reversedString;
+        document.getElementById("reverse_result").style.color="blue";
         document.getElementById("input_string").value = "";
     }
 
@@ -68,7 +70,7 @@ $(document).ready(function () {
      */
     function largeString() {
         let inputStrings = document.getElementById("input_strings").value;
-
+        document.getElementById("largest_string_result").innerText = "";
         // Validate the input string.
         if (inputStrings === "") {
             document.getElementById("largest_string_validation").innerText =
@@ -91,13 +93,14 @@ $(document).ready(function () {
 
         // Validate that at least one string is provided.
         if (largestString === "") {
-            document.getElementById("largest_string_result").innerText =
+            document.getElementById("largest_string_validation").innerText =
                 "Enter proper string";
             return null;
         }
 
         document.getElementById("largest_string_result").innerText =
             largestString;
+            document.getElementById("largest_string_result").style.color="blue";
         document.getElementById("input_strings").value = "";
     }
 
@@ -110,13 +113,15 @@ $(document).ready(function () {
 
         // Validate name and phone number.
         if (userName === "" || phoneNumber === "") {
-            alert("Enter name and phone number");
+            document.getElementById("cookie_validation").innerText="enter the name and phone number";
+            document.getElementById("cookie_validation").style.color="red";
             return;
         }
 
         // Validate the name length.
         if (userName.length < 2 || userName.length > 50) {
-            alert("Enter proper name");
+            document.getElementById("cookie_validation").innerText="enter proper name";
+            document.getElementById("cookie_validation").style.color="red";
             return;
         }
 
@@ -124,7 +129,8 @@ $(document).ready(function () {
         const phoneNumberPattern = /^[1-9]\d{9}$/;
 
         if (!phoneNumberPattern.test(phoneNumber)) {
-            alert("Enter the proper phone number");
+            document.getElementById("cookie_validation").innerText="enter proper number";
+            document.getElementById("cookie_validation").style.color="red";
             return;
         }
 
@@ -132,6 +138,8 @@ $(document).ready(function () {
         document.cookie = "phone=; max-age=0; path=/";
         document.cookie = "username=" + userName + "; max-age=3600; path=/";
         document.cookie = "phone=" + phoneNumber + "; max-age=3600; path=/";
+        alert("cookie saved");
+
         console.log("Cookie is " + document.cookie);
     }
 
@@ -200,7 +208,7 @@ $(document).ready(function () {
             allSkills.push(value.trim());
         });
     });
-    $("#strs").autocomplete({
+    $("#input_strings").autocomplete({
         source: allSkills,
     });
 });
