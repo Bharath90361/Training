@@ -38,6 +38,9 @@
 #mypage_footer {
     background-color: #e3caa5;
     height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #user_interaction {
@@ -57,7 +60,7 @@
 #large,
 #cookie,
 #date {
-    min-height: 200px;
+    min-height: 300px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -99,4 +102,9 @@ fieldset {
 .section_content {
     flex: 1;
     padding: 15px;
+}
+#mypage_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
