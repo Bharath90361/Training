@@ -50,18 +50,18 @@ insert into tWall(user_id,post) values(104,"vacation");
 select * from tUser where Name="Bharath";
 
 --2 Write a query to fetch all posts of a person given his name
-SELECT w.* FROM tWall w JOIN tUser u ON w.user_id = u.user_id WHERE u.Name = 'Bharath';
+SELECT w.* FROM tUser u LEFT JOIN tWall w ON u.user_id = w.user_id  WHERE u.Name = 'Bharath';
 
 --3 Write a query to fetch all posts of a particular friend of a person, given his name and the friends name.
 
 
 SELECT p.*
 FROM tWall p
-JOIN tFriends f
+LEFT OUTER JOIN tFriends f
     ON f.friend_id = p.user_id
-JOIN tUser u
+LEFT OUTER JOIN tUser u
     ON u.user_id = f.user_id
-JOIN tUser b
+LEFT OUTER JOIN tUser b
     ON b.user_id = f.friend_id
 WHERE u.Name = 'Sharath'
   AND b.Name = 'Bharath';
@@ -69,13 +69,13 @@ WHERE u.Name = 'Sharath'
 --4 Write a query to fetch all friends of a particular friend of a person, given the persons name and friend's name.
 SELECT friend2.*
 FROM tUser person
-JOIN tFriends f1
+LEFT OUTER JOIN tFriends f1
     ON person.user_id = f1.user_id
-JOIN tUser friend
+LEFT OUTER JOIN tUser friend
     ON friend.user_id = f1.friend_id
-JOIN tFriends f2
+LEFT OUTER JOIN tFriends f2
     ON friend.user_id = f2.user_id
-JOIN tUser friend2
+LEFT OUTER JOIN tUser friend2
     ON friend2.user_id = f2.friend_id
 WHERE person.Name = 'Bharath'
   AND friend.Name = 'Sharath';
@@ -86,9 +86,9 @@ WHERE person.Name = 'Bharath'
 
 DELETE f
 FROM tFriends f
-JOIN tUser u1
+LEFT OUTER JOIN tUser u1
     ON u1.user_id = f.user_id
-JOIN tUser u2
+LEFT OUTER JOIN tUser u2
     ON u2.user_id = f.friend_id
 WHERE u1.Name = 'harsha'
   AND u2.Name = 'Sharath';
