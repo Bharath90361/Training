@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Back button */
+
+#back_button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#back_button:hover {
+    background-color: #555;
+}
+
+/* Profile information */
+
+#name,
+#email,
+#address,
+#phone {
+    width: 500px;
+    margin: 15px auto;
+    padding: 18px 20px;
+
+    background-color: white;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    color: #333;
+    font-size: 18px;
+}
+
+/* First item */
+
+#name {
+    margin-top: 60px;
+}
+.profile-card a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 20px;
+    font-weight: bold;
+}
