@@ -22,7 +22,7 @@ if ($userId === "" || $post === "") {
 require_once "../database/db.php";
 //sql query
 $sql = "INSERT INTO tWall (user_id, post)
-            VALUES (?, ?)";
+        VALUES (?, ?)";
 
 $stmt = $conn->prepare($sql);
 

@@ -18,10 +18,7 @@ $sql = "SELECT
             u.* 
         FROM 
             tUser u 
-        LEFT OUTER JOIN 
-            tFriends f 
-            ON 
-                u.user_id = f.friend_id 
+        LEFT OUTER JOIN tFriends f ON u.user_id = f.friend_id 
         WHERE 
             f.user_id = ?";
 

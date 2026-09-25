@@ -4,12 +4,7 @@ $username = "root";
 $password = "Bharath@1234";
 $database = "facebook";
 
-$conn = new mysqli(
-    $host,
-    $username,
-    $password,
-    $database
-);
+$conn = new mysqli( $host, $username, $password, $database );
 
 if ($conn->connect_error) {
     echo json_encode([

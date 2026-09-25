@@ -57,9 +57,7 @@ $(document).ready(function () {
         try {
             let response = await fetch("update_profile.php", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json", },
                 body: JSON.stringify({
                     user_id: userId,
                     name: name,

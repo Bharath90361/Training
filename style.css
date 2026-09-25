@@ -19,6 +19,7 @@ body {
 /* Back button */
 
 #back_button {
+    margin-bottom: 30px;
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -114,4 +115,125 @@ h1 {
     .profile-options {
         grid-template-columns: 1fr;
     }
+}
+#post_content{
+     display: block;
+
+    width: 600px;
+    height: 200px;
+
+    margin: 50px auto 15px;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+
+    resize: vertical;
+}
+#submit_post{
+    display: block;
+
+    width: 600px;
+    margin: 0 auto;
+
+    padding: 12px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+#post_heading{
+    border: 1px solid black;
+    height:50px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#post_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+#post_table th,
+#post_table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#post_table th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+#post_table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+#post_table tr:hover {
+    background-color: #eeeeee;
+}
+/* Friends container */
+
+#friends {
+    max-width: 50%;
+    margin: auto;
+}
+
+/* 
+   This styles elements that your friends.js
+   dynamically adds inside #friends
+*/
+
+#friends > div {
+    text-align: center;
+    background-color: rgb(255, 253, 150);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+#friends > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+#friends > div a{
+    text-decoration: none;
+    color:black;
+    height: 100%;
+    width: 100%;
+}
+
+#friends_post{
+    display: flex;
+    margin-top: 30px;
+
+}
+#friend_section{
+    width: 50%;
+}
+#post_section{
+    width: 50%;
 }
