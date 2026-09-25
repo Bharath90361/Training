@@ -50,7 +50,7 @@ insert into tWall(user_id,post) values(104,"vacation");
 select * from tUser where Name="Bharath";
 
 --2 Write a query to fetch all posts of a person given his name
-SELECT w.* FROM tUser u LEFT JOIN tWall w ON u.user_id = w.user_id  WHERE u.Name = 'Bharath';
+SELECT w.* FROM tUser u LEFT OUTER JOIN tWall w ON u.user_id = w.user_id  WHERE u.Name = 'Bharath';
 
 --3 Write a query to fetch all posts of a particular friend of a person, given his name and the friends name.
 
