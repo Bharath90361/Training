@@ -1,7 +1,7 @@
 <?php
 
 header("Content-Type: application/json");
-
+// extracting data 
 $userId = $_GET["id"] ?? "";
 
 if ($userId === "") {
@@ -11,24 +11,16 @@ if ($userId === "") {
     ]);
     exit;
 }
-
-$host = "localhost";
-$username = "root";
-$password = "Bharath@1234";
-$database = "facebook";
-
-$conn = new mysqli($host, $username, $password, $database);
-
-if ($conn->connect_error) {
-    echo json_encode([
-        "success" => false,
-        "message" => "Database connection failed"
-    ]);
-    exit;
-}
-
-// $sql = "SELECT * FROM tUser t join tFriends f on t.user_id=f.friend_id join tUser u on u.user_id=f.user_id WHERE u.user_id = ?";
-$sql = "select * from tUser where user_id in (select friend_id from tFriends where user_id=?)";
+//databse connection 
+require_once "../database/db.php";
+//query
+$sql = "SELECT 
+            u.* 
+        FROM 
+            tUser u 
+        LEFT OUTER JOIN tFriends f ON u.user_id = f.friend_id 
+        WHERE 
+            f.user_id = ?";
 
 $stmt = $conn->prepare($sql);
 

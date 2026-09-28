@@ -188,3 +188,111 @@ h1 {
 #post_table tr:hover {
     background-color: #eeeeee;
 }
+/* Friends container */
+
+#friends {
+    max-width: 50%;
+    margin: auto;
+}
+
+/* 
+   This styles elements that your friends.js
+   dynamically adds inside #friends
+*/
+
+#friends > div {
+    text-align: center;
+    background-color: rgb(255, 253, 150);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+#friends > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+#friends > div a{
+    text-decoration: none;
+    color:black;
+    height: 100%;
+    width: 100%;
+}
+
+#friends_post{
+    display: flex;
+    margin-top: 30px;
+
+}
+#friend_section{
+    width: 50%;
+}
+#post_section{
+    width: 50%;
+}
+#post_content {
+    display: block;
+
+    width: 400px;
+    height: 150px;
+
+    margin: 50px auto 15px;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+
+    resize: vertical;
+}
+
+#post_content:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Submit button */
+
+#submit_post {
+    display: block;
+
+    width: 400px;
+    margin: 0 auto;
+
+    padding: 12px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit_post:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    #post_content,
+    #submit_post {
+        width: 100%;
+    }
+}

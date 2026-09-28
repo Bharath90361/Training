@@ -1,43 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("back_button");
+$(document).ready(function () {
+    //button for previous page
+    let button = document.getElementById("back_button");
     button.addEventListener("click", function () {
         window.history.back();
     });
-    const params = new URLSearchParams(window.location.search);
-    const userId = params.get("id");
-    //fetching user details
+    let params = new URLSearchParams(window.location.search);
+    let userId = params.get("id");
+    //fetching user deails and updating to the html page
     async function getUserData() {
-        if (!userId) {
-            console.log("User ID not found");
+        if (userId == null) {
+            alert("user id cannot be null");
             return;
         }
-        console.log("Fetching data for user ID:", userId);
         try {
-            const response = await fetch(
-                `../profile/get_user.php?id=${userId}`,
-            );
+            let response = await fetch(`../profile/get_user.php?id=${userId}`);
 
-            const data = await response.json();
-
-            console.log(data);
-
+            let data = await response.json();
+            //updating the user information into the html page
             if (data.success) {
-                console.log("Name:", data.user.Name);
-                // console.log("Email:", data.user.email);
-
-                document.getElementById("name").textContent =
-                    "Name:" + data.user.Name;
-                document.getElementById("email").textContent =
-                    "Email:" + data.user.Email_id;
-                document.getElementById("address").textContent =
-                    "Address:" + data.user.Address;
-                document.getElementById("phone").textContent =
-                    "Phone:" + data.user.Phone;
+                document.querySelector(".js-name").textContent = data.user.Name;
+                document.querySelector(".js-email").textContent =
+                    data.user.Email_id;
+                document.querySelector(".js-address").textContent =
+                    data.user.Address;
+                document.querySelector(".js-phone").textContent =
+                    data.user.Phone;
             } else {
-                console.log(data.message);
+                alert(data.message);
             }
         } catch (error) {
-            console.error("Error occurred:", error);
+            alert("Error occurred: " + error);
         }
     }
     getUserData();

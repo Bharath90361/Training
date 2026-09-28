@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <button id="back_button">Back</button>
+        <!-- link to open profile -->
+        <div class="profile-container">
+            <h1>Welcome to <span id="user_name"></span> profile</h1>
+
+            <div id="friends_post">
+                <div id="friend_section">
+                    <h1>All Friends</h1>
+                    <div id="friends" class="js-friend-name"></div>
+                </div>
+                <div id="post_section">
+                    <h1>All Posts</h1>
+                    <table id="post_table" class="js-post-table" border="1">
+                        <tr>
+                            <th>date</th>
+                            <th>post</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="friend.js"></script>
+    </body>
+</html>

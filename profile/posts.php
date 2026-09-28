@@ -1,5 +1,6 @@
 <?php
 
+//fetching data from javascript
 header("Content-Type: application/json");
 
 $userId = $_GET["id"] ?? "";
@@ -11,24 +12,17 @@ if ($userId === "") {
     ]);
     exit;
 }
+//connecting with database
+require_once "../database/db.php";
 
-$host = "localhost";
-$username = "root";
-$password = "Bharath@1234";
-$database = "facebook";
-
-$conn = new mysqli($host, $username, $password, $database);
-
-if ($conn->connect_error) {
-    echo json_encode([
-        "success" => false,
-        "message" => "Database connection failed"
-    ]);
-    exit;
-}
-
-// $sql = "SELECT * FROM tUser t join tFriends f on t.user_id=f.friend_id join tUser u on u.user_id=f.user_id WHERE u.user_id = ?";
-$sql = "select * from tWall where user_id=? ORDER BY posting_date DESC";
+//query to fetch all posts
+$sql = "SELECT * 
+        FROM 
+            tWall 
+        WHERE 
+            user_id=? 
+        ORDER BY 
+            posting_date DESC";
 
 $stmt = $conn->prepare($sql);
 

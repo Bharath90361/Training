@@ -19,17 +19,7 @@ if ($user === "") {
     exit;
 }
 
-$host = "localhost";
-$username = "root";
-$password = "Bharath@1234";
-$database = "facebook";
-
-$conn = new mysqli(
-    $host,
-    $username,
-    $password,
-    $database
-);
+require_once "database/db.php";
 
 if ($conn->connect_error) {
 
@@ -41,7 +31,11 @@ if ($conn->connect_error) {
     exit;
 }
 
-$sql = "SELECT * FROM tUser WHERE name = ?";
+$sql = "SELECT * 
+        FROM 
+            tUser 
+        WHERE 
+            Name = ?";
 
 $stmt = $conn->prepare($sql);
 

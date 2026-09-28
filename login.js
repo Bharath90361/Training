@@ -1,53 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("user_validate");
-    const error = document.getElementById("error");
-    const userInput = document.getElementById("user");
+$(document).ready(function () {
+    let form = document.getElementById("user_validate");
+    let error = document.getElementById("error");
 
-    //suggestions
-    userInput.addEventListener("keyup", function () {
-        console.log("User input changed:", userInput.value);
-        const userInputValue = userInput.value.trim();
-        const suggestion = document.getElementById("suggestion");
-        function guessName() {
-            if (userInputValue == "") {
-                suggestion.innerText = "";
-            } else {
-                suggestion.innerText = "";
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        const data = JSON.parse(xhr.responseText);
-                        if (!data.success) {
-                            suggestion.innerText = "No suggestions found";
-                            return;
-                        }
-                        const arr = data.user;
-
-                        for (let i = 0; i < arr.length; i++) {
-                            const s = document.createElement("p");
-                            s.innerText = arr[i].Name;
-                            suggestion.appendChild(s);
-                        }
-                    }
-                };
-                xhr.open(
-                    "GET",
-                    "guess.php?name=" + encodeURIComponent(userInputValue),
-                    true,
-                );
-                xhr.send();
-            }
-        }
-        guessName();
-    });
-    //login
-    form.addEventListener("submit", async function (event) {
+    //taking the form data and checking the user present database or not
+    $(form).on("submit", async function (event) {
         event.preventDefault();
 
-        const userInput = document.getElementById("user").value.trim();
+        let userInput = document.getElementById("user").value.trim();
 
         error.innerText = "";
-
+        //valiadating the user input empty or not
         if (userInput === "") {
             error.innerText = "Please enter a name";
             error.style.color = "red";
@@ -56,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            console.log("Sending request to login.php with name:", userInput);
-
-            const response = await fetch("login.php", {
+            let response = await fetch("login.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -68,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }),
             });
 
-            const data = await response.json();
-
-            console.log(data);
+            let data = await response.json();
 
             if (data.success) {
                 window.location.href =
@@ -80,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 error.style.color = "red";
             }
         } catch (err) {
-            console.error("Error occurred:", err);
-
             error.innerText = "Something went wrong.";
             error.style.color = "red";
         }

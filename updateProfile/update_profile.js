@@ -1,66 +1,66 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("back_button");
+$(document).ready(function () {
+    //button for previous page
+
+    let button = document.getElementById("back_button");
     button.addEventListener("click", function () {
         window.history.back();
     });
+
     //fill the form with existing user data
     async function getUserData() {
-        const params = new URLSearchParams(window.location.search);
-        const userId = params.get("id");
+        let params = new URLSearchParams(window.location.search);
+        let userId = params.get("id");
 
-        if (!userId) {
-            console.log("User ID not found");
+        if (userId == null) {
+            alert("user id cannot be null");
             return;
         }
-        console.log("Fetching data for user ID:", userId);
         try {
-            const response = await fetch(
-                `../profile/get_user.php?id=${userId}`,
-            );
+            let response = await fetch(`../profile/get_user.php?id=${userId}`);
 
-            const data = await response.json();
-
+            let data = await response.json();
+            //loading the existing data
             if (data.success) {
-                document.getElementById("name").value = data.user.Name;
-                document.getElementById("email").value = data.user.Email_id;
-                document.getElementById("phone").value = data.user.Phone;
-                document.getElementById("address").value = data.user.Address;
-                document.getElementById("password").value = data.user.Password;
+                document.querySelector(".js-user-name").value = data.user.Name;
+                document.querySelector(".js-user-email").value =
+                    data.user.Email_id;
+                document.querySelector(".js-user-phone").value =
+                    data.user.Phone;
+                document.querySelector(".js-user-address").value =
+                    data.user.Address;
+                document.querySelector(".js-user-password").value =
+                    data.user.Password;
             } else {
-                console.log(data.message);
+                alert(data.message);
             }
         } catch (error) {
-            console.error("Error occurred:", error);
+            alert("Error occurred: " + error);
         }
     }
     getUserData();
 
-    //update profile form submission
+    //update profile after form submission
     let form = document.getElementById("update_profile");
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-        const address = document.getElementById("address").value.trim();
-        const phone = document.getElementById("phone").value;
+        let name = document.querySelector(".js-user-name").value.trim();
+        let email = document.querySelector(".js-user-email").value.trim();
+        let password = document.querySelector(".js-user-password").value.trim();
+        let address = document.querySelector(".js-user-address").value.trim();
+        let phone = document.querySelector(".js-user-phone").value;
 
-        const params = new URLSearchParams(window.location.search);
-        const userId = params.get("id");
-
+        let params = new URLSearchParams(window.location.search);
+        let userId = params.get("id");
+        //validating the input data
         if (name === "" || email === "" || password === "") {
-            console.log("All fields are required");
             return;
         }
-
+        //sending data to backend
         try {
-            console.log("Sending update request for user ID:", userId);
-            const response = await fetch("update_profile.php", {
+            let response = await fetch("update_profile.php", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     user_id: userId,
                     name: name,
@@ -71,18 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 }),
             });
 
-            const data = await response.json();
-
-            console.log(data);
+            let data = await response.json();
 
             if (data.success) {
-                console.log("Profile updated successfully");
                 window.location.href = "../profile/profile.html?id=" + userId;
             } else {
-                console.log(data.message);
+                alert(data.message);
             }
         } catch (error) {
-            console.error("Error occurred:", error);
+            alert("Error occurred:", error);
         }
     });
 });
