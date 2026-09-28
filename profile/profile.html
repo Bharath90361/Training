@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Profile</title>
 
-        <link rel="stylesheet" href="../style.css" />
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
 
-    <body>
-        <button id="back_button">Back</button>
-        <!-- link to open profile -->
-        <div class="profile-container">
-            <h1>
-                Welcome to your profile:
-                <a href="#" id="user_name">....</a>
-            </h1>
-              <!-- creating the post -->
-                <div class="profile-card" id="create_post">
-                    <a href="#" id="create_post_link">Create Post</a>
-                </div>
-            <div id="friends_post">
-                <div id="friend_section">
-                    <h1>All Friends</h1>
-                    <div id="friends" class="js-friend-name"></div>
-                </div>
-                
-                <div id="post_section">
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <button id="back_button">Back</button>
+    <!-- link to open profile -->
+    <div class="profile-container">
+        <h1>
+            Welcome to your profile:
+            <a href="#" id="user_name">....</a>
+        </h1>
+        <!-- creating the post -->
+        <div class="profile-card" id="create_post">
+            <a href="#" id="create_post_link">Create Post</a>
+        </div>
+        <div id="friends_post">
+            <div id="friend_section">
+                <h1>All Friends</h1>
+                <div id="friends" class="js-friend-name"></div>
+            </div>
+
+            <div id="post_section">
                 <h1>All Posts</h1>
                 <table id="post_table" class="js-post-table" border="1">
                     <tr>
@@ -34,12 +35,13 @@
                         <th>post</th>
                     </tr>
                 </table>
-                </div>
-            </div>
-
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="profile.js"></script>
-    </body>
+
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="profile.js"></script>
+</body>
+
 </html>

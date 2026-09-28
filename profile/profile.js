@@ -31,6 +31,7 @@ $(document).ready(function () {
         }
     }
     getUserData();
+    //fetching all friends
     async function getFriendsData() {
         if (userId==null) {
             alert("user id cannot be null");
@@ -49,7 +50,7 @@ $(document).ready(function () {
                     let anchor = document.createElement("a");
                     let div = document.createElement("div");
                     anchor.textContent = user.Name;
-                    anchor.href = `profile.html?id=${user.user_id}`;
+                    anchor.href = `../friendProfile/friend.html?id=${user.user_id}`;
                     div.appendChild(anchor);
                     container.appendChild(div);
                     let br = document.createElement("br");
@@ -100,6 +101,8 @@ $(document).ready(function () {
         }
     }
     getUserposts();
+
+
 
     //updating the achor tag links to redirect to specific page with user id
 
