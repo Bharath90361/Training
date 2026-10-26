@@ -1,0 +1,709 @@
+@font-face {
+    font-family: "facebook";
+    src: url("../../fonts/facebook-sans/FacebookSansRegular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../../fonts/helvetica-255/Helvetica.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "optimistic";
+    src: url("../../fonts/Optimistic/optimistic.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+#center_content {
+    height: calc(100vh + 52px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+    display: flex;
+    width: 100%;
+
+}
+
+#images {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    border-right: 1px solid rgba(0, 0, 0, 0.130);
+    height: calc(100vh + 52px);
+    overflow: hidden;
+}
+
+#facebook_icon {
+    width: 100%;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+svg {
+    height: 72px;
+    width: 72px;
+    fill: #0064e0;
+}
+
+#left_part {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+#text_part {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    margin-left: 20px;
+    margin-bottom: 70px;
+    padding-left: 20px;
+}
+
+#text_part>span {
+    display: block;
+    font-family: "facebook", sans-serif;
+    font-size: 4.05vw;
+    font-weight: 800;
+    line-height: 66px;
+    white-space: normal;
+}
+
+
+#text_part>span:nth-of-type(3) {
+    color: #0064e0;
+}
+
+#text_part>span:nth-of-type(3) span {
+    color: black;
+}
+
+#right_part {
+    height: 500px;
+    width: 500px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+#images>img {
+    transform: translateX(-29px);
+    height: 521px;
+    box-sizing: content-box;
+    width: 413px;
+    margin-top: 31px;
+    object-fit: contain;
+}
+
+#login {
+    width: 45%;
+    margin-left: 13.5px;
+}
+
+#login_details {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: facebook;
+    padding-left: 40px;
+
+}
+
+#login_details p {
+    box-sizing: content-box;
+    font-family: "optimistic", Helvetica, sans-serif;
+    margin-bottom: 1.26rem;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#login_details input {
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-left: 6px;
+    width: 400px;
+    border: none;
+    height: 50px;
+
+}
+
+#login_button {
+    font-family: "optimistic", Helvetica, sans-serif;
+    width: 100%;
+    height: 44px;
+
+    background-color: #0064e0;
+    border-radius: 22px;
+
+    color: white;
+    border: none;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    font-size: 15px;
+    padding-top: 3px;
+}
+
+#forgot_password {
+    font-family: "optimistic", Helvetica, sans-serif;
+    width: 100%;
+    height: 43px;
+    display: flex;
+    border-radius: 25px;
+    margin-bottom: 46px;
+    padding-top: 12px;
+    padding-left: 1px;
+
+}
+
+#forgot_password:hover {
+    background-color: rgba(169, 169, 169, 0.199);
+}
+
+#login_details a {
+    font-family: "optimistic", Helvetica, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 195px;
+    color: black;
+}
+
+#create_account {
+    font-family: "optimistic", Helvetica, sans-serif;
+    width: 100%;
+    height: 44px;
+    margin-top: 7px;
+    font-size: 15px;
+    padding-top: 3px;
+    border-radius: 22px;
+    background-color: white;
+    border: 1px solid #0064e0;
+
+    color: #0064e0;
+}
+
+#meta svg {
+    height: 12px;
+    width: 60px;
+    margin-left: 243px;
+    margin-top: 28px;
+}
+
+input::placeholder {
+    font-size: 1rem;
+    font-family: "optimistic", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.2s;
+
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+input:focus::placeholder {
+    transform: translateY(-12px);
+    font-size: 11px;
+}
+
+#footer_wrap {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-left: 40px;
+    line-height: 35px;
+}
+
+.footer_contents {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+#f_one {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+#f_one a {
+    font-family: "Helvetica", Arial, sans-serif;
+    text-decoration: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+#f_two {
+    margin-left: 60px;
+}
+
+#f_two a {
+    font-family: "Helvetica", Arial, sans-serif;
+    text-decoration: none;
+    margin-left: 15px;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+#f_three {
+    margin-left: 60px;
+}
+
+#f_three a {
+    font-family: "Helvetica", Arial, sans-serif;
+    text-decoration: none;
+    margin-left: 15px;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+
+button,
+a {
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    #right_part {
+        width: 420px;
+        height: 420px;
+    }
+
+    #images>img {
+        width: 420px;
+        height: 420px;
+    }
+
+    #facebook_icon {
+        width: 65px;
+        height: 82px;
+        padding-left: 20px;
+        padding-top: 35px;
+    }
+
+    #text_part {
+        padding-left: 20px;
+        padding-top: 20px;
+        font-size: 22px;
+    }
+
+    #login_details {
+        padding-left: 25px;
+    }
+
+    .input_block,
+    #login_button,
+    #create_account {
+        width: 85%;
+    }
+
+    #login_details a {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #meta_logo {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1070px) {
+    #right_part {
+        width: 350px;
+        height: 350px;
+    }
+
+    #images>img {
+        width: 350px;
+        height: 350px;
+        margin-top: 110px;
+        transform: translateX(-90px);
+    }
+
+    #facebook_icon {
+        width: 55px;
+        height: 70px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #text_part {
+
+        width: 230px;
+        padding-left: 15px;
+        margin-bottom: 70px;
+        font-size: 19px;
+
+    }
+
+    #text_part>span {
+        display: block;
+    }
+
+    #login_details {
+        padding-left: 20px;
+    }
+
+    #login_details h3 {
+        font-size: 20px;
+    }
+
+    .input_block {
+        width: 100% !important;
+        height: 45px;
+    }
+
+    #login_button,
+    #create_account {
+        width: 100%;
+        height: 45px;
+    }
+
+    #forgot_password {
+        width: 100%;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        margin-bottom: 50px;
+    }
+
+    #forgot_password:hover {
+        background-color: rgba(169, 169, 169, 0.199);
+    }
+
+    #login_details a {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #meta {
+        margin-left: 0;
+        text-align: center;
+
+    }
+
+    #meta svg {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 994px) {
+    #right_part {
+        width: 280px;
+        height: 280px;
+    }
+
+    #images>img {
+        width: 280px;
+        height: 280px;
+        padding-top: 20px;
+    }
+
+    #facebook_icon {
+        width: 50px;
+        height: 60px;
+        padding-left: 10px;
+        padding-top: 20px;
+    }
+
+    #text_part {
+        font-size: 16px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    #login_details {
+        padding-left: 15px;
+    }
+
+    #login_details h3 {
+        font-size: 17px;
+    }
+
+    .input_block {
+        width: 500px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    #login_button,
+    #create_account {
+        width: 500px;
+        height: 35px;
+        border-radius: 18px;
+    }
+
+    #login_details a {
+        font-size: 13px;
+    }
+
+    #meta_logo {
+        font-size: 17px;
+    }
+
+    #forgot_password {
+        width: 70%;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        margin-bottom: 50px;
+    }
+
+    #forgot_password:hover {
+        background-color: rgba(169, 169, 169, 0.199);
+    }
+}
+
+
+@media (max-width: 991.98px) {
+
+    /* Main section becomes vertical */
+    #center_content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Logo section */
+    #images {
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+
+    #left_part {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Keep only logo */
+    #text_part {
+        display: none;
+    }
+
+    #right_part {
+        display: none;
+    }
+
+    /* Center Facebook logo */
+    #facebook_icon {
+        margin-left: 0px;
+        width: 100%;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+    }
+
+    #facebook_icon {
+        padding: 20px 0;
+    }
+
+    /* Login below logo */
+    #login {
+        width: 100%;
+    }
+
+    #login_details {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+
+        align-items: center;
+    }
+
+    #login_details p {
+        margin-left: 0px;
+    }
+
+    /* #login_details input, */
+    #login_button,
+    #create_account {
+        width: 500px;
+        height: 60px;
+    }
+
+    .input_block {
+        width: 500px !important;
+        height: 60px;
+    }
+
+    #login_details a {
+        margin-left: 0;
+    }
+
+    #meta_logo {
+        margin-left: 0;
+    }
+
+    #forgot_password {
+        width: 70%;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        margin-bottom: 50px;
+    }
+
+    #forgot_password:hover {
+        background-color: rgba(169, 169, 169, 0.199);
+    }
+}
+
+@media (max-width: 600px) {
+    #right_part {
+        width: 220px;
+        height: 220px;
+    }
+
+    #images>img {
+        width: 220px;
+        height: 220px;
+    }
+
+    #facebook_icon {
+        margin-left: 0px;
+        width: 100%;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+    }
+
+    #text_part {
+        font-size: 13px;
+        padding-left: 8px;
+        padding-top: 5px;
+    }
+
+    #login_details {
+        padding-left: 10px;
+    }
+
+    #login_details h3 {
+        font-size: 15px;
+    }
+
+    .input_block {
+        width: 70% !important;
+        height: 40px !important;
+        font-size: 12px;
+
+
+    }
+
+    .input_block input {
+        height: 20px !important;
+        margin: 5px !important;
+    }
+
+    #login_button,
+    #create_account {
+        height: 40px;
+        width: 70%;
+        font-size: 12px;
+    }
+
+    #login_details a {
+        font-size: 11px;
+    }
+
+    #meta_logo {
+        font-size: 14px;
+    }
+
+    #forgot_password {
+        width: 70%;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        margin-bottom: 50px;
+    }
+
+    #forgot_password:hover {
+        background-color: rgba(169, 169, 169, 0.199);
+    }
+}
+
+.js-error-message {
+    color: red;
+    font-size: 13px !important;
+}
+
+.js-error-input {
+    border-color: red !important;
+
+}
+
+.js-error-input input::placeholder {
+    color: red !important;
+}
+
+.js-login-error {
+    border: 1px solid black;
+    display: flex;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+}
+
+.js-login-error p {
+    font-size: 13px !important;
+}
+
+.input_block {
+    width: 546px;
+    height: 60px;
+    border-radius: 17px;
+    border: 1px solid rgb(209, 211, 213);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#eye_icon {
+    height: 60px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 90px;
+}
